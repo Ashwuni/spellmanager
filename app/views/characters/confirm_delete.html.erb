@@ -1,0 +1,21 @@
+<h1>Delete Character</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @character.name %>
+</p>
+
+
+<!--     CLASS -->
+
+
+
+  <%= form_with model: @character, local: true, method: 'delete' do |f| %>
+    <%= f.submit "Confirm Delete" %>
+  <% end %>
+
+
+<p>
+<%= link_to 'Edit Character', edit_character_path(@character) %> |    
+<%= link_to 'Show Characters', characters_path %> |
+<%= link_to 'Home', root_path %> 
+</p>
