@@ -1,11 +1,11 @@
 
-<%= form_with(model: book, local: true) do |form| %>
-  <% if book.errors.any? %>
+<%= form_with(model: spell, local: true) do |form| %>
+  <% if spell.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
+      <h2><%= pluralize(spell.errors.count, "error") %> prohibited this spell from being saved:</h2>
 
       <ul>
-        <% book.errors.full_messages.each do |message| %>
+        <% spell.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -22,10 +22,14 @@
     <%= form.number_field :year %>
   </div>
 
+
+<!-- ahhhh BELOW -->
   <div class="field">
-    <%= form.label :character_id %>
-    <%= form.select(:character_id, Character.to_nested_array_for_select) %>      
+    <%= form.label :book_id %>
+    <%= form.select(:book_id, Book.to_nested_array_for_select) %>      
   </div>
+
+<!-- AHHHHHHH ABOVE  -->
 
   <div class="actions">
     <%= form.submit %>

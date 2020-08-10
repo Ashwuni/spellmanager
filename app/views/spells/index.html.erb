@@ -1,0 +1,34 @@
+<p id="notice"><%= flash[:notice] %></p>
+
+<h1>Spells</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><%= link_to 'Name', spells_path(order_by: 'name') %></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spells.each do |spell| %>
+      <tr>
+        <td><%= spell.name %></td>
+        <td><%= link_to 'Show', spell %></td>
+        <td><%= link_to 'Edit', edit_spell_path(spell) %></td>
+        <td><%= form_with model: spell, method: :delete, local: true do |f| %>
+            <%= f.submit 'Delete' %>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<p>
+<%= link_to 'New Spell', new_spell_path %> |
+<%= link_to "Home", root_path %>    
+</p>
