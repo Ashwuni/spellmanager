@@ -1,0 +1,23 @@
+<h1>Delete Book</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @book.name %>
+</p>
+<% if @book.num_spells > 0 %>    
+  <p>
+    <strong>Notice:</strong> This book has several spells saved. Do you wish to delete all their spells as well? <%= @author.lister %>
+      <%= form_with model: @author, local: true, method: 'delete' do |f| %>
+      <%=  f.submit "Confirm Delete" %>
+    <% end %>  
+  </p>
+<% else %>
+  <%= form_with model: @book, local: true, method: 'delete' do |f| %>
+    <%= f.submit "Confirm Delete" %>
+  <% end %>
+<% end %>
+
+<p>
+<%= link_to 'Edit Book', edit_book_path(@book) %> |    
+<%= link_to 'Show Books', books_path %> |
+<%= link_to 'Home', root_path %> 
+</p>

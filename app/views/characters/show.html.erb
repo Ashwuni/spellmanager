@@ -1,32 +1,15 @@
 <p id="notice"><%= flash[:notice] %></p>
 
 <p>
-  <strong>Character Name:</strong>
-  <%= @character.name %> <%= @character.class %>
-    
-  <strong>Book Name:</strong>
-  <%= @book.name %> <%= @character.name %>
-    
-  <strong>Spell Name:</strong>
-  <%= @spell.name %> <%= @book.name %>
-
-    
+  <strong>Name:</strong>
+  <%= @character.name %> <%= @character.lastname %>
 
 <p><%= link_to 'Edit Character', edit_character_path(@character) %></p>
-<p><%= link_to 'Edit Book', edit_book_path(@book) %></p>
-<p><%= link_to 'Edit Spell', edit_spell_path(@spell) %></p>
-
-
-
+    
 </p>
 
 <p>
 <%= link_to 'New Character', new_character_path %> |
-    <%= link_to 'New Book', new_book_path %> |
-    <%= link_to 'New Spell', new_spell_path %> |
-<%= link_to 'Show Character', characters_path %> |
-    <%= link_to 'Show Book', books_path %> |
-    <%= link_to 'Show SPell', spells_path %> |
-
+<%= link_to 'Show Characters', characters_path %> |
 <%= link_to 'Home', root_path %> 
 </p>

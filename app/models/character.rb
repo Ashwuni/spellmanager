@@ -20,22 +20,22 @@ class Character < ApplicationRecord
     
     
   def book_id
-      book_ids = Array.new
-      id = books.select(:id).to_a
+      spell_ids = Array.new
+      id = spells.select(:id).to_a
       id.each do |x|
-          book_ids.push(x.id)
+          spell_ids.push(x.id)
       end
       
-      return book_ids
+      return spell_ids
   end
 
   def lister 
-      book_ids = Array.new
-      id = books.select(:id).to_a
+      spell_ids = Array.new
+      id = spells.select(:id).to_a
       id.each do |x|
-          book_ids.push(Book.find(x.id).title)
+          spell_ids.push(Spell.find(x.id).name)
       end
       
-      return book_ids
+      return spell_ids
   end
 end

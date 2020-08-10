@@ -1,7 +1,8 @@
-<%= form_with(book: character, local: true) do |form| %>
+
+<%= form_with(model: book, local: true) do |form| %>
   <% if book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> </h2>
+      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
       <ul>
         <% book.errors.full_messages.each do |message| %>
@@ -12,8 +13,18 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :Book Name %>
-    <%= form.text_field :name %>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :character_id %>
+    <%= form.select(:character_id, Character.to_nested_array_for_select) %>      
   </div>
 
   <div class="actions">
