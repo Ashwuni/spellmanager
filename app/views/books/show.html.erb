@@ -1,0 +1,31 @@
+<p id="notice"><%= flash[:notice] %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @books.name %>
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Spells</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @books.spells.each do |spells| %>
+      <tr>
+        <td><%= link_to spells.name, spells %></td>   
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</p>
+
+<p>
+<p><%= link_to 'Edit Book', edit_book_path(@books) %></p>    
+<%= link_to 'New Book', new_book_path %> |
+<%= link_to 'All Books', books_path %> |
+<%= link_to 'Home', root_path %> 
+</p>
