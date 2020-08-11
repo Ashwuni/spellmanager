@@ -1,15 +1,16 @@
 <h1>Delete Book</h1>
 <p>
   <strong>Name:</strong>
-  <%= @books.name %>
+  <%= @book.name %>
 </p>
 
-<%= form_with model: @books, local: true, method: 'delete' do |f| %>
-<%= f.submit "Confirm Delete" %>
-<% end %>
+  <%= form_with model: @book, local: true, method: 'delete' do |f| %>
+    <%= f.submit "Confirm Delete" %>
+  <% end %>
+
 
 <p>
-<%= link_to 'All Books', books_path %> | 
-<%= link_to "Home", root_path %>
-</p>    
-
+<%= link_to 'Edit Book', edit_book_path(@book) %> |    
+<%= link_to 'Show Books', books_path %> |
+<%= link_to 'Home', root_path %> 
+</p>

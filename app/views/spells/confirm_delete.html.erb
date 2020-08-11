@@ -3,18 +3,11 @@
   <strong>Name:</strong>
   <%= @spell.name %>
 </p>
-<% if @spell.num_spells > 0 %>    
-  <p>
-    <strong>Notice:</strong> Confirm Delete? %>
-      <%= form_with model: @character, local: true, method: 'delete' do |f| %>
-      <%=  f.submit "Confirm Delete" %>
-    <% end %>  
-  </p>
-<% else %>
+
   <%= form_with model: @spell, local: true, method: 'delete' do |f| %>
     <%= f.submit "Confirm Delete" %>
   <% end %>
-<% end %>
+
 
 <p>
 <%= link_to 'Edit Spell', edit_spell_path(@spell) %> |    
