@@ -1,4 +1,3 @@
-
 <%= form_with(model: spell, local: true) do |form| %>
   <% if spell.errors.any? %>
     <div id="error_explanation">
@@ -13,25 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :Name %>
+    <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
+    <%= form.label :Level%>
+    <%= form.text_field :level %>
   </div>
 
-
-<!-- ahhhh BELOW -->
   <div class="field">
-    <%= form.label :character_id %>
-    <%= form.select(:character_id, Character.to_nested_array_for_select) %>      
+    <%= form.label :School %>
+    <%= form.text_field :school %>
   </div>
 
-<!-- AHHHHHHH ABOVE  -->
+  <div class="field">
+    <%= form.label :Classes %>
+    <%= form.text_field :classes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Concentration %>
+    <%= form.text_field :concentration %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :Description %>
+    <%= form.text_field :description %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>
   </div>
+
 <% end %>
