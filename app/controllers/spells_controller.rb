@@ -5,41 +5,41 @@ class SpellsController < ApplicationController
   end
 
   def show
-    @spell = Spell.find(params[:id])
+    @spells = Spell.find(params[:id])
   end
 
   def new
-    @spell = Spell.new
+    @spells = Spell.new
   end
 
   def edit
-    @spell = Spell.find(params[:id])
+    @spells = Spell.find(params[:id])
   end
 
   def create
-    @spell = Spell.new(spell_params)
+    @spells = Spell.new(spell_params)
 
-    if @spell.save
+    if @spells.save
       flash[:notice] = 'Spell was successfully created!'  
-      redirect_to @spell
+      redirect_to @spells
     else
       render :new
     end
   end
     
   def update
-    @spell = Spell.find(params[:id])  
-    if @spell.update(spell_params)
+    @spells = Spell.find(params[:id])  
+    if @spells.update(spell_params)
       flash[:notice] = 'Spell was successfully updated!' 
-      redirect_to @spell
+      redirect_to @spells
     else
       render :edit
     end
   end
 
   def destroy
-    @spell = Spell.find(params[:id])  
-    if @spell.destroy
+    @spells = Spell.find(params[:id])  
+    if @spells.destroy
         flash[:notice] = 'Spell was successfully deleted!'
     else
         flash[:notice] = 'Unable to delete the spell! Sorry!'
