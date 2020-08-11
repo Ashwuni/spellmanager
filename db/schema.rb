@@ -10,32 +10,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_042935) do
+ActiveRecord::Schema.define(version: 2020_08_11_070530) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "books", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 70, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "characters", force: :cascade do |t|
-    t.string "class"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "books_spells", id: false, force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "spell_id", null: false
+    t.index ["spell_id", "book_id"], name: "index_books_spells_on_spell_id_and_book_id", unique: true
   end
 
   create_table "spells", force: :cascade do |t|
-    t.string "name"
+    t.string "name", limit: 70, null: false
+    t.integer "level"
+    t.string "school"
+    t.string "concentration"
+    t.string "classes"
+    t.string "description", limit: 4096, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
+  add_foreign_key "books_spells", "books"
+  add_foreign_key "books_spells", "spells"
 end
