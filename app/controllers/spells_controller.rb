@@ -27,6 +27,12 @@ class SpellsController < ApplicationController
     end
   end
     
+  def add_to_book
+    @spells = Spell.find(params[:id])
+    book = @spells.book
+    book.spells << [@spells]
+  end
+    
   def update
     @spells = Spell.find(params[:id])  
     if @spells.update(spell_params)
