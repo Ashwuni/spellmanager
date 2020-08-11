@@ -1,11 +1,11 @@
 body {
   background-color: #fff;
-  color: #333;
+  color: purple;
   margin: 33px;
 }
 
 body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: garamond, verdana, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -21,7 +21,7 @@ a {
 }
 
 a:visited {
-  color: #666;
+  color: green;
 }
 
 a:hover {
@@ -43,7 +43,7 @@ div.actions {
 }
 
 #notice {
-  color: green;
+  color: blue;
 }
 
 .field_with_errors {

@@ -31,6 +31,7 @@ class SpellsController < ApplicationController
     @spells = Spell.find(params[:id])
     book = @spells.book
     book.spells << [@spells]
+    flash[:notice] = 'Spell was successfully added!'
   end
     
   def update
@@ -55,7 +56,7 @@ class SpellsController < ApplicationController
 
   private
     def spell_params
-      params.require(:spell).permit(:name, :level, :creater_id)
+      params.require(:spell).permit(:name, :level, :school, :classes, :concentration, :description,:creater_id)
     end
       
 end
