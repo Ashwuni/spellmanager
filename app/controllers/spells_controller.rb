@@ -1,7 +1,7 @@
 class SpellsController < ApplicationController
 
   def index
-    @spells = Spell.order_by params[:order_by]
+    @spells = Spell.all 
   end
 
   def show

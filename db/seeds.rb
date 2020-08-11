@@ -45,10 +45,10 @@ b3 = Book.create(name: "Marathonia (GiantFoot)")
 b4 = Book.create(name: "Dorfal's Wand")
 b5 = Book.create(name: "Level Zero Character!")
 
-b1.spells << [s3,s7,s8,s9]
+# b1.spells << [s3,s7,s8,s9]
 
-b2.spells << [s3,s15,s17]
+# b2.spells << [s3,s15,s17]
 
-b3.spells << [s1,s2,s6,s12,s19]
+# b3.spells << [s1,s2,s6,s12,s19]
 
-b4.spells << [s15]
+# b4.spells << [s15]

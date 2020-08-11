@@ -11,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @spells.each do |spell| %>
+    <% @spells.order(:level, :name).each do |spell| %>
       <tr>
         <td><%= spell.name %></td>
         <td><%= link_to 'Show', spell %></td>
