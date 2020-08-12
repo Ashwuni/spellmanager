@@ -28,12 +28,16 @@ class SpellsController < ApplicationController
   end
     
   def add #_to_book
-    @spells = Spell.find(params[:id])
-    @books = Book.find(params[:book])
-#         book = Book.find(spell_book_params)
-       book = Book.find(Spell.find(params["book"].id))
 
-       book.spells << [@spells]
+       skip_before_filter :verify_authenticity_token  
+ skip_before_action :verify_authenticity_token
+
+    @spells = Spell.find(params[:id])
+    book = Book.find(params[book_id])
+#         book = Book.find(spell_book_params)
+       #book = Book.find(Spell.find(params["book"].id))
+
+      book.spells << [@spells]
       flash[:notice] = 'Spell was successfully added!' 
       redirect_to @spells
   end

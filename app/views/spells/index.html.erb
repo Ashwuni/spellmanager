@@ -15,7 +15,6 @@
       <tr>
         <td><%= link_to spell.name, spell %></td>
         <td><%= link_to 'Edit', edit_spell_path(spell) %></td>
-        <td><%= link_to 'Addidnweg', add_to_book_spells_path(spell) %></td>
         <td><%= form_with model: spell, method: :delete, local: true do |f| %>
             <%= f.submit 'Delete' %>
             <% end %>
