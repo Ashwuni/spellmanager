@@ -25,13 +25,14 @@
   <%= @spells.description %>
 </p>
 
-<td><%= form_with model: @spells, method: :add_to_book, local: true do |f| %>
+<!-- <td><%= form_with model: @spells, method: :add_to_book, local: true do |f| %>
             <%= f.submit 'Add to Book' %>
             <% end %>
-</td>    
+</td>     -->
     
 <p>
 <%= link_to 'Edit Spell', edit_spell_path(@spells) %> |
+<%= link_to 'Add Spell to Book',add_to_book_spell_path_url(@spells) %> |
 <%= link_to 'All Spells', spells_path %> |
 <%= link_to "Home", root_path %>    
 </p>

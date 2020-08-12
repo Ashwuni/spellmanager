@@ -1,8 +1,5 @@
-<h1>Add to Book</h1>
+<h1>Add <%=@spell.name%> to Book</h1>
 
-<strong>Name:</strong>
-  <%= @spell.name %>
-</p>
 
   <%= form_with model: @spell, local: true, method: 'add to book' do |f| %>
     <%= f.submit "Confirm Add" %>

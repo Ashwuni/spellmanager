@@ -29,9 +29,13 @@ class SpellsController < ApplicationController
     
   def add_to_book
     @spells = Spell.find(params[:id])
-    book = @spells.book
-    book.spells << [@spells]
-    flash[:notice] = 'Spell was successfully added!'
+      
+#        book = Book.find(spell_book_params)
+       book = Book.find(@spells.add_to_book)
+
+       book.spells << [@spells]
+      flash[:notice] = 'Spell was successfully added!' 
+      redirect_to @spells
   end
     
   def update
@@ -57,6 +61,9 @@ class SpellsController < ApplicationController
   private
     def spell_params
       params.require(:spell).permit(:name, :level, :school, :classes, :concentration, :description)
+    end
+    def spell_book_params
+      params.require(:id)
     end
       
 end
