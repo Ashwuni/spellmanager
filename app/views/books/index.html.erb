@@ -15,8 +15,10 @@
       <tr>
         <td><%= link_to book.name, book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Delete', confirm_delete_book_path(book) %></td>     
-      </tr>
+        <td><%= form_with model: book, method: :delete, local: true do |f| %>
+            <%= f.submit 'Delete' %>
+            <% end %>
+        </td>
     <% end %>
   </tbody>
 </table>
