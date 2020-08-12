@@ -37,7 +37,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def destroy
+   def destroy
     @books = Book.find(params[:id])  
     if @books.destroy
         flash[:notice] = 'Book was successfully deleted!'
@@ -49,7 +49,7 @@ class BooksController < ApplicationController
 
   private
     def book_params
-      params.require(:book).permit(:name, :creater_id)
+      params.require(:book).permit(:name)
     end
       
 end

@@ -6,7 +6,7 @@ class CreateSpells < ActiveRecord::Migration[6.0]
       t.string :school
       t.string :classes
       t.string :concentration
-      t.string :description, limit: 4096, null:false
+      t.string :description, limit: 4096
 
       t.timestamps
     end

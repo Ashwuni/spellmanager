@@ -45,10 +45,10 @@ b3 = Book.create(name: "Marathonia (GiantFoot)")
 b4 = Book.create(name: "Dorfal's Wand")
 b5 = Book.create(name: "Level Zero Character!")
 
-# b1.spells << [C,I,J,K]
+b1.spells << [C,I,J,K]
 
-# b2.spells << [C,Q,S]
+b2.spells << [C,Q,S]
 
-# b3.spells << [A,B,H,N,U]
+b3.spells << [A,B,H,N,U]
 
-# b4.spells << [Q]
+b4.spells << [Q]
