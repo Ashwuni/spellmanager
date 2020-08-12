@@ -27,16 +27,16 @@ class SpellsController < ApplicationController
     end
   end
     
-  def add_to_book
-    @spells = Spell.find(params[:id])
+#   def add_to_book
+#     @spells = Spell.find(params[:id])
       
-#        book = Book.find(spell_book_params)
-       book = Book.find(@spells.add_to_book)
+# #        book = Book.find(spell_book_params)
+#        book = Book.find(@spells.add_to_book)
 
-       book.spells << [@spells]
-      flash[:notice] = 'Spell was successfully added!' 
-      redirect_to @spells
-  end
+#        book.spells << [@spells]
+#       flash[:notice] = 'Spell was successfully added!' 
+#       redirect_to @spells
+#   end
     
   def update
     @spells = Spell.find(params[:id])  
