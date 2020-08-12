@@ -18,22 +18,25 @@
 
   <div class="field">
     <%= form.label :Level%>
-    <%= form.text_field :level %>
+    <%= form.select :level, [ 0,1,2,3,4,5,6,7,8,9 ] %>  
   </div>
 
   <div class="field">
     <%= form.label :School %>
-    <%= form.text_field :school %>
+    <%= form.select :school, ["Conjuration", "Necromancy", "Evocation", "Abjuration", "Transmutation", "Divination", "Enchantment", "Illusion"] %>  
   </div>
 
   <div class="field">
     <%= form.label :Classes %>
-    <%= form.text_field :classes %>
+    <%= form.select :classes, ["Bard", "Cleric", "Druid", "Paladin", "Ranger", "Sorcerer", "Warlock", "Wizard"] %>  
   </div>
 
   <div class="field">
     <%= form.label :Concentration %>
-    <%= form.text_field :concentration %>
+    <%= form.radio_button :concentration, "True" %>
+    <%= form.label :Concentration, "True" %>
+    <%= form.radio_button :concentration, "False" %>
+    <%= form.label :Concentration, "False" %>
   </div>
 
 

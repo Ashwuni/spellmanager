@@ -3,7 +3,7 @@ class Spell < ApplicationRecord
     validates_presence_of :name
     validates_length_of :name, maximum: 70
 
-    def add_to_book
-      return 
-    end
+#     def add_to_book
+#       return 
+#     end
 end

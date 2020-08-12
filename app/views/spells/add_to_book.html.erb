@@ -1,9 +1,16 @@
-<h1>Add <%=@spells.name%> to Book</h1>
+<h1>Add Spell to Book</h1>
 
 
-  <%= form_with model: @spell, local: true, method: 'add to book' do |f| %>
+
+  <%= form_with model: @spell, local: true, method: 'add' do |f| %>
+    <div class="field">
+    <%= f.label :Book %>
+    <%= f.select :book, [ 1,2,3,4,5,6,7,8,9,10,11,12 ] %>  
+    </div>
     <%= f.submit "Confirm Add" %>
   <% end %>
+
+
 
 <p>
 <%= link_to 'All Spells', spells_path %> |
