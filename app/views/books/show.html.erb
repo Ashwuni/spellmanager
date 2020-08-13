@@ -17,7 +17,6 @@
     <% @books.spells.each do |spells| %>
       <tr>
         <td><%= link_to spells.name, spells %></td>
-        <td><%= link_to 'Delete', confirm_delete_spell_path(spells) %></td>
       </tr>
     <% end %>
   </tbody>

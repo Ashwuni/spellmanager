@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_08_11_074725) do
-<%= csrf_meta_tags %>
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,9 +31,9 @@ ActiveRecord::Schema.define(version: 2020_08_11_074725) do
     t.string "name", limit: 70, null: false
     t.integer "level"
     t.string "school"
-    t.string "concentration"
     t.string "classes"
-    t.string "description", limit: 4096, null: false
+    t.string "concentration"
+    t.string "description", limit: 4096
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
