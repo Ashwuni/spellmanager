@@ -6,7 +6,6 @@ application up and running.
 https://a255kumafinal.herokuapp.com/
 
 
-
 Things you may want to cover:
 
 * Ruby version
